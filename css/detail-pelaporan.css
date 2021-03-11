@@ -1,0 +1,89 @@
+.profil-foto{
+	width: 120px; 
+	height:120px; 
+	object-fit:cover
+}
+
+.profil-foto-petugas{
+	width: 120px; 
+	height:120px; 
+	object-fit:cover
+}
+
+.foto-pelaporan{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.foto{
+	height: 25vh;
+	flex-grow: 1;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.foto img{
+	max-height: 100%;
+	min-width: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	vertical-align: bottom;
+	transition: .3s ease;
+}
+
+.foto img:hover{
+	transition: .3s ease;
+	transform: scale(1.05);
+}
+
+.mymodal {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	z-index: 9999;
+ }
+ 
+ .modal-overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+ }
+ 
+ .mymodal .btn-close-modal {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	background: none;
+	outline: none;
+	border: none;
+	color: white;
+	font-size: 32px;
+	cursor: pointer;
+ }
+ 
+ .mymodal .modal-content {
+	position: relative;
+	max-width: 120vh;
+ }
+ 
+ .mymodal .modal-content .img-modal {
+	width: 100%;
+	height: auto;
+ }
+ 
+ .mymodal.modal-show {
+	visibility: visible;
+	opacity: 1;
+ }
