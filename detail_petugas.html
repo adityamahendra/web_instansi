@@ -187,13 +187,8 @@
                       </div>
 
                       <div class="profile-head pl-4">
-                        <h5 class="text-dark font-weight-bold">
-                          Prasetya Wijaya
-                        </h5>
-                        <h6 class="text-primary">
-                          prasetyawijaya
-                        </h6>
-
+                        <h5 class="text-dark font-weight-bold">Aditya Mahendra</h5>
+                        <h6 class="text-primary">adityanym</h6>
                         <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
                           <li class="nav-item">
                             <a class="nav-link active" id="profil-tab" data-toggle="tab" href="#profil" role="tab"
@@ -218,32 +213,34 @@
                         <div class="d-flex">
                           <div class="col-md-8">
                             <div class="form-group">
-                              <label class="form-control-label" for="nama">NIP</label>
+                              <label class="form-control-label" for="nama">NIk</label>
                               <input type="text" id="nama" class="form-control" placeholder="NIP" value="99929299129">
                             </div>
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-first-name">Jenis Kelamin</label>
-                              <input type="text" id="input-first-name" class="form-control" placeholder="Jenis Kelamin"
+                              <input type="text" id="input-first-name" class="form-control"
                                 value="Laki Laki">
                             </div>
                           </div>
                         </div>
 
                         <div class="d-flex">
-                          <div class="col-lg-6">
+                          <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-email">No. Telp</label>
-                              <input type="text" id="input-telp" class="form-control" value="+6281222383282"
-                                placeholder="No. Telp">
+                              <input type="text" id="input-telp" class="form-control" value="+6281222383282">
                             </div>
                           </div>
-                          <div class="col-lg-6">
+                          <div class="form-group col-md-4">
+                            <label for="example-date-input">Tanggal Lahir</label>
+                            <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                          </div>            
+                          <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-last-name">Status</label>
-                              <input type="text" id="input-last-name" class="form-control" placeholder="Status"
-                                value="Aktif">
+                              <input type="text" id="input-last-name" class="form-control" value="Aktif">
                             </div>
                           </div>
                         </div>
@@ -263,18 +260,25 @@
                         </div>
 
                         <div class="d-flex">
-                          <div class="col-lg-6">
+                          <div class="col-lg-4">
                             <div class="form-group">
-                              <label class="form-control-label" for="input-email">Kecamatan</label>
-                              <input type="text" id="input-telp" class="form-control" value="Kuta Utara"
-                                placeholder="Kecamatan">
+                              <label class="form-control-label" for="input-last-name">Provinsi</label>
+                              <input type="text" id="input-last-name" class="form-control" placeholder="Kabupaten"
+                                value="Bali">
                             </div>
                           </div>
-                          <div class="col-lg-6">
+                          <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-last-name">Kabupaten</label>
                               <input type="text" id="input-last-name" class="form-control" placeholder="Kabupaten"
                                 value="Badung">
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+                            <div class="form-group">
+                              <label class="form-control-label" for="input-email">Kecamatan</label>
+                              <input type="text" id="input-telp" class="form-control" value="Kuta Utara"
+                                placeholder="Kecamatan">
                             </div>
                           </div>
                         </div>
@@ -329,51 +333,83 @@
           <form>
             <div class="form-group">
               <label class="col-form-label-sm">Nama Lengkap</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Nama Lengkap" value="Ari Wiradana">
+              <input type="text" class="form-control form-control-lg" placeholder="Aditya Mahendra">
             </div>
-            <div class="form-check">
+            <div class="form-group">
+              <label class="col-form-label-sm">Nama Pengguna</label>
+              <input type="text" class="form-control form-control-lg" disabled placeholder="adityanym">
+            </div>
+
+            <div class="form-check mb-1">
               <input class="form-check-input" id="show-password" type="checkbox" value="" onclick="showPassword()">
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="col-form-label-sm" for="flexCheckDefault">
                 Ubah Kata Sandi
               </label>
             </div>
+
             <div style="display:none" id="password">
-              <div class="form-group mt-2 row">
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Lama</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Lama"
-                    value="000120102010212">
+              <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputEmail4">Kata Sandi Lama</label>
+                  <input type="password" class="form-control" id="inputEmail4" placeholder="Kata Sandi Lama">
                 </div>
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Baru</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Baru"
-                    value="000120102010212">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Ulangi Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
                 </div>
               </div>
             </div>
-            <div class="form-group row mt-2">
-              <div class="col-md-6 mb-sm-0">
-                <label class="col-form-label-sm">No. Telp</label>
-                <input type="number" class="form-control form-control-lg" placeholder="No. Telp" value="082717282818">
+            <div class="form-group">
+              <label class="col-form-label-sm">NIK</label>
+              <input type="number" class="form-control form-control-lg" disabled placeholder="1902828474763663">
+            </div>
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6">
+                <label for="jk" class="col-form-label-sm">Jenis Kelamin</label>
+                <select disabled class="form-control form-control-lg" id="jk">
+                  <option>Pilih Jenis Kelamin</option>
+                  <option selected>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
               </div>
-              <div class="col-md-6">
-                <label for="status_aktif" class="col-form-label-sm">Status</label>
+              <div class="form-group col-md-6">
+                <label for="example-date-input">Tanggal Lahir</label>
+                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+              </div>
+            </div>
+
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6 mb-sm-0">
+                <label class="col-form-label-sm">No. Telp</label>
+                <input type="number" class="form-control form-control-lg" placeholder="082937362735">
+              </div>
+              <div class="col-sm-6">
+                <label for="status_aktif" class="col-form-label-sm">Status Akun</label>
                 <select class="form-control form-control-lg" id="status_aktif">
+                  <option selected disabled>Pilih Status Akun</option>
                   <option>Aktif</option>
                   <option>Tidak Aktif</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto</label>
+              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto Petugas</label>
               <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
-            <button style="margin: 5px 0 10px 0;" type="submit" class="btn btn-primary">Simpan</button>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-secondary mr-2">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- modal foto -->
   <div id="mymodal" class="mymodal">

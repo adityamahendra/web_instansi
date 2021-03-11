@@ -92,7 +92,6 @@
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
@@ -105,10 +104,8 @@
               </div>
             </div>
           </form>
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
@@ -131,7 +128,6 @@
                 </form>
               </div>
             </li>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -163,10 +159,6 @@
           <div id="main-content" class="container-fluid">
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-2 text-gray-800">Petugas</h1>
-            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus illo blanditiis,
-              voluptatem voluptas eveniet natus delectus reiciendis molestiae tenetur?</a>.</p>
-
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
               <div class="card-header py-3 tambah-petugas">
@@ -188,6 +180,7 @@
                         <th>Nama Pengguna</th>
                         <th>NIK</th>
                         <th>No. Telp</th>
+                        <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Status</th>
                         <th>Aksi</th>
@@ -199,6 +192,7 @@
                         <td>sastrawan</td>
                         <td>1902828474763663</td>
                         <td>082937362735</td>
+                        <td>14 Agustus 1999</td>
                         <td>Laki-Laki</td>
                         <td>Aktif</td>
                         <td>
@@ -216,7 +210,8 @@
                               </span>
                               <span class="text">Edit</span>
                             </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal" data-target="#modalHapus">
+                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal"
+                              data-target="#modalHapus">
                               <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                               </span>
@@ -230,6 +225,7 @@
                         <td>ariwiradana</td>
                         <td>99928282717271</td>
                         <td>082937221735</td>
+                        <td>14 Maret 1999</td>
                         <td>Laki-Laki</td>
                         <td>Aktif</td>
                         <td>
@@ -247,7 +243,8 @@
                               </span>
                               <span class="text">Edit</span>
                             </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal" data-target="#modalHapus">
+                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal"
+                              data-target="#modalHapus">
                               <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                               </span>
@@ -257,10 +254,11 @@
                         </td>
                       </tr>
                       <tr>
-                        <td>Vikana Bramasta</td>
-                        <td>bramerame</td>
+                        <td>Aditya Mahendra</td>
+                        <td>adityanym</td>
                         <td>1902828474763663</td>
                         <td>082937362735</td>
+                        <td>1 Agustus 1999</td>
                         <td>Laki-Laki</td>
                         <td>Aktif</td>
                         <td>
@@ -278,7 +276,8 @@
                               </span>
                               <span class="text">Edit</span>
                             </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal" data-target="#modalHapus">
+                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal"
+                              data-target="#modalHapus">
                               <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                               </span>
@@ -292,12 +291,8 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
-        <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
 
@@ -310,10 +305,8 @@
         </div>
       </footer>
       <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
 
@@ -363,10 +356,6 @@
               <label class="col-form-label-sm">Nama Pengguna</label>
               <input type="text" class="form-control form-control-lg" placeholder="Nama Pengguna">
             </div>
-            <div class="form-group">
-              <label class="col-form-label-sm">NIK</label>
-              <input type="number" class="form-control form-control-lg" placeholder="NIK">
-            </div>
             <div class="form-group row">
               <div class="col-sm-6 mb-sm-0">
                 <label class="col-form-label-sm">Kata Sandi</label>
@@ -378,30 +367,46 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              <label class="col-form-label-sm">NIK</label>
+              <input type="number" class="form-control form-control-lg" placeholder="NIK">
             </div>
             <div class="form-group row" style="margin-top: 15px;">
-              <div class="col-sm-4 mb-sm-0">
-                <label class="col-form-label-sm">No. Telp</label>
-                <input type="number" class="form-control form-control-lg" placeholder="No. Telp">
-              </div>
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <label for="jk" class="col-form-label-sm">Jenis Kelamin</label>
                 <select class="form-control form-control-lg" id="jk">
+                  <option selected disabled>Pilih Jenis Kelamin</option>
                   <option>Laki-laki</option>
                   <option>Perempuan</option>
                 </select>
               </div>
-              <div class="col-sm-4">
-                <label for="status_aktif" class="col-form-label-sm">Status</label>
+              <div class="form-group col-md-6">
+                <label for="example-date-input">Tanggal Lahir</label>
+                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+              </div>
+            </div>
+
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6 mb-sm-0">
+                <label class="col-form-label-sm">No. Telp</label>
+                <input type="number" class="form-control form-control-lg" placeholder="No. Telp">
+              </div>
+              <div class="col-sm-6">
+                <label for="status_aktif" class="col-form-label-sm">Status Akun</label>
                 <select class="form-control form-control-lg" id="status_aktif">
+                  <option selected disabled>Pilih Status Akun</option>
                   <option>Aktif</option>
                   <option>Tidak Aktif</option>
                 </select>
               </div>
             </div>
-            <button style="margin: 5px 0 10px 0;" type="submit" class="btn btn-primary">Simpan</button>
+            <div class="form-group">
+              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto Petugas</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-secondary mr-2">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
           </form>
         </div>
       </div>
@@ -423,46 +428,77 @@
           <form>
             <div class="form-group">
               <label class="col-form-label-sm">Nama Lengkap</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Nama Lengkap" value="Ari Wiradana">
+              <input type="text" class="form-control form-control-lg" placeholder="Aditya Mahendra">
             </div>
-            <div class="form-check">
+            <div class="form-group">
+              <label class="col-form-label-sm">Nama Pengguna</label>
+              <input type="text" class="form-control form-control-lg" disabled placeholder="adityanym">
+            </div>
+
+            <div class="form-check mb-1">
               <input class="form-check-input" id="show-password" type="checkbox" value="" onclick="showPassword()">
-              <label class= "form-check-label" for="flexCheckDefault">
+              <label class="col-form-label-sm" for="flexCheckDefault">
                 Ubah Kata Sandi
               </label>
             </div>
+
             <div style="display:none" id="password">
-              <div class="form-group mt-2 row">
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Lama</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Lama"
-                    value="000120102010212">
+              <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputEmail4">Kata Sandi Lama</label>
+                  <input type="password" class="form-control" id="inputEmail4" placeholder="Kata Sandi Lama">
                 </div>
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Baru</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Baru"
-                    value="000120102010212">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Ulangi Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
                 </div>
               </div>
             </div>
-            <div class="form-group row mt-2">
-              <div class="col-md-6 mb-sm-0">
-                <label class="col-form-label-sm">No. Telp</label>
-                <input type="number" class="form-control form-control-lg" placeholder="No. Telp" value="082717282818">
+            <div class="form-group">
+              <label class="col-form-label-sm">NIK</label>
+              <input type="number" class="form-control form-control-lg" disabled placeholder="1902828474763663">
+            </div>
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6">
+                <label for="jk" class="col-form-label-sm">Jenis Kelamin</label>
+                <select disabled class="form-control form-control-lg" id="jk">
+                  <option>Pilih Jenis Kelamin</option>
+                  <option selected>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
               </div>
-              <div class="col-md-6">
-                <label for="status_aktif" class="col-form-label-sm">Status</label>
+              <div class="form-group col-md-6">
+                <label for="example-date-input">Tanggal Lahir</label>
+                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+              </div>
+            </div>
+
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6 mb-sm-0">
+                <label class="col-form-label-sm">No. Telp</label>
+                <input type="number" class="form-control form-control-lg" placeholder="082937362735">
+              </div>
+              <div class="col-sm-6">
+                <label for="status_aktif" class="col-form-label-sm">Status Akun</label>
                 <select class="form-control form-control-lg" id="status_aktif">
+                  <option selected disabled>Pilih Status Akun</option>
                   <option>Aktif</option>
                   <option>Tidak Aktif</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto</label>
-              <input type="file"class="form-control-file" id="exampleFormControlFile1">
+              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto Petugas</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
-            <button style="margin: 5px 0 10px 0;" type="submit" class="btn btn-primary">Simpan</button>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-secondary mr-2">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
           </form>
         </div>
       </div>
@@ -470,8 +506,7 @@
   </div>
 
   <!-- Modal Hapus -->
-  <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="modalHapus"
-    aria-hidden="true">
+  <div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="modalHapus" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -481,7 +516,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <span>Apakah anda yakin mengahpus data ini?</span>
+          <span>Apakah anda yakin menghapus data ini?</span>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary">Hapus</button>
