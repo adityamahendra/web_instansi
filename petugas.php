@@ -220,72 +220,6 @@
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td>Ari Wiradana</td>
-                        <td>ariwiradana</td>
-                        <td>99928282717271</td>
-                        <td>082937221735</td>
-                        <td>14 Maret 1999</td>
-                        <td>Laki-Laki</td>
-                        <td>Aktif</td>
-                        <td>
-                          <div class="container-crud">
-                            <a href="detail_petugas.php" class="btn btn-success btn-icon-split btn-sm">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-file"></i>
-                              </span>
-                              <span class="text">Detail</span>
-                            </a>
-                            <a href="#" class="btn btn-primary btn-icon-split btn-sm" data-toggle="modal"
-                              data-target="#modalEditPetugas">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-edit"></i>
-                              </span>
-                              <span class="text">Edit</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal"
-                              data-target="#modalHapus">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                              </span>
-                              <span class="text">Hapus</span>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Aditya Mahendra</td>
-                        <td>adityanym</td>
-                        <td>1902828474763663</td>
-                        <td>082937362735</td>
-                        <td>1 Agustus 1999</td>
-                        <td>Laki-Laki</td>
-                        <td>Aktif</td>
-                        <td>
-                          <div class="container-crud">
-                            <a href="detail_petugas.php" class="btn btn-success btn-icon-split btn-sm">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-file"></i>
-                              </span>
-                              <span class="text">Detail</span>
-                            </a>
-                            <a href="#" class="btn btn-primary btn-icon-split btn-sm" data-toggle="modal"
-                              data-target="#modalEditPetugas">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-edit"></i>
-                              </span>
-                              <span class="text">Edit</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split btn-sm" data-toggle="modal"
-                              data-target="#modalHapus">
-                              <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                              </span>
-                              <span class="text">Hapus</span>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -543,6 +477,61 @@
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/show-field.js"></script>
+
+  <script>
+    $(document).ready(async () => {
+      const req = await fetch("https://sipandu-beradat.000webhostapp.com/wilayah/banjar/");
+      const {
+        status_code,
+        data,
+        message
+      } = await req.json();
+
+      if (status_code === 200) {
+        data.map((obj, i) => {
+          const row = `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${obj.desaAdat.kecamatan.name}</td>
+                    <td>${obj.desaAdat.name}</td>
+                    <td>${obj.name}</td>
+                    ${obj.active_status ? '<td><label class="badge badge-success">Aktif</label></td>' : '<td><label class="badge badge-danger">Nonaktif</label></td>'}
+                    <td>
+                    <div class="container-crud">
+                        <a href="#" class="btn btn-info btn-icon-split btn-sm btn-edit" data-toggle="modal"
+                            data-target="#modalEditNegara" data-id="${obj.id}" data-name="${obj.name}" data-status="${obj.active_status}">
+                                <span class="icon text-white">
+                                    <i class="ti-write"></i>
+                                </span>
+                        <span class="text">Edit</span>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon-split btn-sm btn-delete" data-toggle="modal"
+                        data-target="#modalHapusNegara" data-id="${obj.id}">
+                        <span class="icon text-white">
+                            <i class="ti-trash"></i>
+                        </span>
+                        <span class="text">Hapus</span>
+                        </a>
+                    </div>
+                    </td>
+                </tr>
+            `;
+
+          $("#tabel-banjar tbody").append(row);
+        });
+
+        $(".btn-edit").click(e => {
+          const id = $(e.currentTarget).attr("data-id");
+          const name = $(e.currentTarget).attr("data-name");
+          const status = $(e.currentTarget).attr("data-status");
+
+          $("#idNegara").val(id)
+          $("#namaNegara").val(name)
+          $("#statusNegara").val(status)
+        })
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -41,6 +41,6 @@ $(document).ready(async () => {
 	  alert("Login berhasil");
 	  window.location.href = "index.php";
 	} else if (status_code === 400){
-	  alert("Mohon inputkan data dengan benar")
+	  alert("Anda belum memasukkan data")
 	}
  });

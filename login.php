@@ -52,12 +52,11 @@
 											</div>
 
 											<div class="form-group">
-												<div class="d-flex justify-content-center">
-													<img id="captcha-image" class="img-fluid mb-3 rounded" alt="Responsive image"
-														style="width:200px">
-												</div>
-												<input type="text" class="form-control form-control-user" id="captcha"
+												<input type="text" class="form-control form-control-user mb-3" id="captcha"
 													name="captcha" placeholder="Kode Captcha">
+
+												<img id="captcha-image" class="img-fluid rounded" alt="Responsive image"
+													style="width:180px">
 											</div>
 
 											<button type="submit" class="btn btn-primary btn-user btn-block">
