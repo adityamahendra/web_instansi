@@ -34,7 +34,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-shield"></i>
         </div>
@@ -46,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -56,14 +56,14 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
-        <a class="nav-link" href="petugas.php">
+        <a class="nav-link" href="petugas.html">
           <i class="fas fa-fw fa-user"></i>
           <span>Petugas</span></a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="pelaporan.php">
+        <a class="nav-link" href="pelaporan.html">
           <i class="fas fa-fw fa-file"></i>
           <span>Pelaporan</span></a>
       </li>
@@ -138,12 +138,12 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profil-admin.php">
+                <a class="dropdown-item" href="profil-admin.html">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -173,7 +173,7 @@
 
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="tabel-petugas" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th>Nama Lengkap</th>
@@ -197,7 +197,7 @@
                         <td>Aktif</td>
                         <td>
                           <div class="container-crud">
-                            <a href="detail_petugas.php" class="btn btn-success btn-icon-split btn-sm">
+                            <a href="detail_petugas.html" class="btn btn-success btn-icon-split btn-sm">
                               <span class="icon text-white-50">
                                 <i class="fas fa-file"></i>
                               </span>
@@ -263,7 +263,7 @@
         <div class="modal-body">Tekan tombol keluar untuk keluar dari akun ini.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="login.php">Keluar</a>
+          <a class="btn btn-primary" href="login.html">Keluar</a>
         </div>
       </div>
     </div>
@@ -480,7 +480,13 @@
 
   <script>
     $(document).ready(async () => {
-      const req = await fetch("https://sipandu-beradat.000webhostapp.com/wilayah/banjar/");
+      const fd = new FormData();
+      fd.append("XAT", `Bearer ${localStorage.getItem("access_token")}`);
+
+      const req = await fetch("https://sipandu-beradat.000webhostapp.com/wilayah/banjar/", {
+        method: "POST",
+        body: fd
+      });
       const {
         status_code,
         data,
@@ -492,43 +498,12 @@
           const row = `
                 <tr>
                     <td>${i + 1}</td>
-                    <td>${obj.desaAdat.kecamatan.name}</td>
                     <td>${obj.desaAdat.name}</td>
-                    <td>${obj.name}</td>
-                    ${obj.active_status ? '<td><label class="badge badge-success">Aktif</label></td>' : '<td><label class="badge badge-danger">Nonaktif</label></td>'}
-                    <td>
-                    <div class="container-crud">
-                        <a href="#" class="btn btn-info btn-icon-split btn-sm btn-edit" data-toggle="modal"
-                            data-target="#modalEditNegara" data-id="${obj.id}" data-name="${obj.name}" data-status="${obj.active_status}">
-                                <span class="icon text-white">
-                                    <i class="ti-write"></i>
-                                </span>
-                        <span class="text">Edit</span>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon-split btn-sm btn-delete" data-toggle="modal"
-                        data-target="#modalHapusNegara" data-id="${obj.id}">
-                        <span class="icon text-white">
-                            <i class="ti-trash"></i>
-                        </span>
-                        <span class="text">Hapus</span>
-                        </a>
-                    </div>
-                    </td>
                 </tr>
             `;
-
-          $("#tabel-banjar tbody").append(row);
+          $("#tabel-petugas tbody").append(row);
         });
 
-        $(".btn-edit").click(e => {
-          const id = $(e.currentTarget).attr("data-id");
-          const name = $(e.currentTarget).attr("data-name");
-          const status = $(e.currentTarget).attr("data-status");
-
-          $("#idNegara").val(id)
-          $("#namaNegara").val(name)
-          $("#statusNegara").val(status)
-        })
       }
     });
   </script>

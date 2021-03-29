@@ -33,7 +33,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-shield"></i>
         </div>
@@ -45,7 +45,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -54,15 +54,15 @@
       <hr class="sidebar-divider">
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="petugas.php">
+      <li class="nav-item active">
+        <a class="nav-link" href="petugas.html">
           <i class="fas fa-fw fa-user"></i>
           <span>Petugas</span></a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="pelaporan.php">
+        <a class="nav-link" href="pelaporan.html">
           <i class="fas fa-fw fa-file"></i>
           <span>Pelaporan</span></a>
       </li>
@@ -91,6 +91,19 @@
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -128,12 +141,12 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profil-admin.php">
+                <a class="dropdown-item" href="profil-admin.html">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -151,8 +164,14 @@
               <div class="card shadow mb-4">
                 <div class="card-header">
                   <div class="col-12 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Profil Admin</h6>
-
+                    <h6 class="m-0 font-weight-bold text-primary">Detail Petugas</h6>
+                    <!-- tombol kembali -->
+                    <a href="petugas.html" class="btn btn-primary btn-icon-split btn-sm">
+                      <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                      </span>
+                      <span class="text">Kembali</span>
+                    </a>
                   </div>
                 </div>
 
@@ -168,16 +187,8 @@
                       </div>
 
                       <div class="profile-head pl-4">
-                        <h5 class="text-dark font-weight-bold">
-                          Prasetya Wijaya
-                        </h5>
-                        <h6 class="text-primary">
-                          prasetyawijaya
-                        </h6>
-                        <div class="d-flex mt-3">
-                          <div class="badge badge-success mr-2">Admin</div>
-                        </div>    
-
+                        <h5 class="text-dark font-weight-bold">Aditya Mahendra</h5>
+                        <h6 class="text-primary">adityanym</h6>
                         <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
                           <li class="nav-item">
                             <a class="nav-link active" id="profil-tab" data-toggle="tab" href="#profil" role="tab"
@@ -185,11 +196,13 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" id="instansi-tab" data-toggle="tab" href="#instansi" role="tab"
-                              aria-controls="instansi" aria-selected="false">Alamat</a>
+                              aria-controls="instansi" aria-selected="false">Instansi</a>
                           </li>
                         </ul>
                       </div>
                     </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                      data-target="#modalEditPetugas">Edit Petugas</button>
                   </div>
 
                   <!-- tab profil -->
@@ -200,14 +213,14 @@
                         <div class="d-flex">
                           <div class="col-md-8">
                             <div class="form-group">
-                              <label class="form-control-label" for="nama">NIP</label>
+                              <label class="form-control-label" for="nama">NIk</label>
                               <input type="text" id="nama" class="form-control" placeholder="NIP" value="99929299129">
                             </div>
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-first-name">Jenis Kelamin</label>
-                              <input type="text" id="input-first-name" class="form-control" placeholder="Jenis Kelamin"
+                              <input type="text" id="input-first-name" class="form-control"
                                 value="Laki Laki">
                             </div>
                           </div>
@@ -216,23 +229,18 @@
                         <div class="d-flex">
                           <div class="col-lg-4">
                             <div class="form-group">
-                              <label class="form-control-label" for="input-email">Instansi</label>
-                              <input type="text" id="instansi" class="form-control" value="Pemadam Kebakaran"
-                                placeholder="Instansi">
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <div class="form-group">
                               <label class="form-control-label" for="input-email">No. Telp</label>
-                              <input type="text" id="input-telp" class="form-control" value="+6281222383282"
-                                placeholder="No. Telp">
+                              <input type="text" id="input-telp" class="form-control" value="+6281222383282">
                             </div>
                           </div>
+                          <div class="form-group col-md-4">
+                            <label for="example-date-input">Tanggal Lahir</label>
+                            <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                          </div>            
                           <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-last-name">Status</label>
-                              <input type="text" id="input-last-name" class="form-control" placeholder="Status"
-                                value="Aktif">
+                              <input type="text" id="input-last-name" class="form-control" value="Aktif">
                             </div>
                           </div>
                         </div>
@@ -252,18 +260,25 @@
                         </div>
 
                         <div class="d-flex">
-                          <div class="col-lg-6">
+                          <div class="col-lg-4">
                             <div class="form-group">
-                              <label class="form-control-label" for="input-email">Kecamatan</label>
-                              <input type="text" id="input-telp" class="form-control" value="Kuta Utara"
-                                placeholder="Kecamatan">
+                              <label class="form-control-label" for="input-last-name">Provinsi</label>
+                              <input type="text" id="input-last-name" class="form-control" placeholder="Kabupaten"
+                                value="Bali">
                             </div>
                           </div>
-                          <div class="col-lg-6">
+                          <div class="col-lg-4">
                             <div class="form-group">
                               <label class="form-control-label" for="input-last-name">Kabupaten</label>
                               <input type="text" id="input-last-name" class="form-control" placeholder="Kabupaten"
                                 value="Badung">
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+                            <div class="form-group">
+                              <label class="form-control-label" for="input-email">Kecamatan</label>
+                              <input type="text" id="input-telp" class="form-control" value="Kuta Utara"
+                                placeholder="Kecamatan">
                             </div>
                           </div>
                         </div>
@@ -318,51 +333,83 @@
           <form>
             <div class="form-group">
               <label class="col-form-label-sm">Nama Lengkap</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Nama Lengkap" value="Ari Wiradana">
+              <input type="text" class="form-control form-control-lg" placeholder="Aditya Mahendra">
             </div>
-            <div class="form-check">
+            <div class="form-group">
+              <label class="col-form-label-sm">Nama Pengguna</label>
+              <input type="text" class="form-control form-control-lg" disabled placeholder="adityanym">
+            </div>
+
+            <div class="form-check mb-1">
               <input class="form-check-input" id="show-password" type="checkbox" value="" onclick="showPassword()">
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="col-form-label-sm" for="flexCheckDefault">
                 Ubah Kata Sandi
               </label>
             </div>
+
             <div style="display:none" id="password">
-              <div class="form-group mt-2 row">
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Lama</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Lama"
-                    value="000120102010212">
+              <div class="form-row">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputEmail4">Kata Sandi Lama</label>
+                  <input type="password" class="form-control" id="inputEmail4" placeholder="Kata Sandi Lama">
                 </div>
-                <div class="col-sm-6">
-                  <label class="col-form-label-sm">Kata Sandi Baru</label>
-                  <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi Baru"
-                    value="000120102010212">
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label class="col-form-label-sm" for="inputPassword4">Ulangi Kata Sandi Baru</label>
+                  <input type="password" class="form-control" id="inputPassword4" placeholder="Kata Sandi Baru">
                 </div>
               </div>
             </div>
-            <div class="form-group row mt-2">
-              <div class="col-md-6 mb-sm-0">
-                <label class="col-form-label-sm">No. Telp</label>
-                <input type="number" class="form-control form-control-lg" placeholder="No. Telp" value="082717282818">
+            <div class="form-group">
+              <label class="col-form-label-sm">NIK</label>
+              <input type="number" class="form-control form-control-lg" disabled placeholder="1902828474763663">
+            </div>
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6">
+                <label for="jk" class="col-form-label-sm">Jenis Kelamin</label>
+                <select disabled class="form-control form-control-lg" id="jk">
+                  <option>Pilih Jenis Kelamin</option>
+                  <option selected>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
               </div>
-              <div class="col-md-6">
-                <label for="status_aktif" class="col-form-label-sm">Status</label>
+              <div class="form-group col-md-6">
+                <label for="example-date-input">Tanggal Lahir</label>
+                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+              </div>
+            </div>
+
+            <div class="form-group row" style="margin-top: 15px;">
+              <div class="col-sm-6 mb-sm-0">
+                <label class="col-form-label-sm">No. Telp</label>
+                <input type="number" class="form-control form-control-lg" placeholder="082937362735">
+              </div>
+              <div class="col-sm-6">
+                <label for="status_aktif" class="col-form-label-sm">Status Akun</label>
                 <select class="form-control form-control-lg" id="status_aktif">
+                  <option selected disabled>Pilih Status Akun</option>
                   <option>Aktif</option>
                   <option>Tidak Aktif</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto</label>
+              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto Petugas</label>
               <input type="file" class="form-control-file" id="exampleFormControlFile1">
             </div>
-            <button style="margin: 5px 0 10px 0;" type="submit" class="btn btn-primary">Simpan</button>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-secondary mr-2">Tutup</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- modal foto -->
   <div id="mymodal" class="mymodal">
@@ -387,7 +434,7 @@
         <div class="modal-body">Tekan tombol keluar untuk keluar dari akun ini.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="login.php">Keluar</a>
+          <a class="btn btn-primary" href="login.html">Keluar</a>
         </div>
       </div>
     </div>

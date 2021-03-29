@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SB Admin 2 - Login</title>
+	<title>Login | Web </title>
 
 	<!-- Custom fonts for this template-->
 	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,11 +52,19 @@
 											</div>
 
 											<div class="form-group">
-												<input type="text" class="form-control form-control-user mb-3" id="captcha"
-													name="captcha" placeholder="Kode Captcha">
+												<div class="d-block">
+													<label for="password" class="control-label">Captcha</label>
+												</div>
 
-												<img id="captcha-image" class="img-fluid rounded" alt="Responsive image"
-													style="width:180px">
+												<div class="d-flex align-items-center">
+													<img id="captcha-image" alt="Responsive image">
+													<button type="button" id="btn-refresh-captcha"
+														class="btn btn-icon btn-sm btn-outline-primary"><i
+															class="fas fa-sync-alt"></i></button>
+												</div>
+
+												<input id="captcha" type="text" class="form-control mt-3" name="captcha"
+													tabindex="2" required>
 											</div>
 
 											<button type="submit" class="btn btn-primary btn-user btn-block">

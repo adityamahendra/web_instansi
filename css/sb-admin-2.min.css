@@ -569,6 +569,7 @@ pre code {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap: 10px;
 }
 .tambah-petugas{
   display: flex; 
