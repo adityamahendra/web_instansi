@@ -40,7 +40,7 @@
 										<div class="text-center">
 											<h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
 										</div>
-										<form class="user" method="POST">
+										<form class="user">
 											<div class="form-group">
 												<input type="username" class="form-control form-control-user" id="username"
 													aria-describedby="username" name="username" placeholder="Nama Pengguna">
@@ -52,10 +52,6 @@
 											</div>
 
 											<div class="form-group">
-												<div class="d-block">
-													<label for="password" class="control-label">Captcha</label>
-												</div>
-
 												<div class="d-flex align-items-center">
 													<img id="captcha-image" alt="Responsive image">
 													<button type="button" id="btn-refresh-captcha"
@@ -63,14 +59,13 @@
 															class="fas fa-sync-alt"></i></button>
 												</div>
 
-												<input id="captcha" type="text" class="form-control mt-3" name="captcha"
-													tabindex="2" required>
+												<input type="text" class="form-control form-control-user" id="captcha"
+													name="captcha" placeholder="Kode Captcha">
 											</div>
 
-											<button type="submit" class="btn btn-primary btn-user btn-block">
+											<button type="submit" id="login" class="btn btn-primary btn-user btn-block">
 												Masuk
 											</button>
-
 										</form>
 										<hr>
 										<div class="text-center">
@@ -99,6 +94,10 @@
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
 
+	<!-- alert js -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<!-- Js Front End -->
 	<script src="js/Auth/login.js"></script>
 
 </body>
