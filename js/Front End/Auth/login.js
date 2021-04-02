@@ -1,16 +1,16 @@
 const getCaptcha = async () => {
 	const req = await fetch(
-		"https://api-sipandu-beradat.000webhostapp.com/captcha/"
+	  "https://api-sipandu-beradat.000webhostapp.com/captcha/"
 	);
 	const {
-		status_code,
-		data,
-		message
+	  status_code,
+	  data,
+	  message
 	} = await req.json();
-
+  
 	if (status_code === 200) {
-		sessionStorage.setItem("captcha_id", data.id);
-		$("#captcha-image").attr("src", data.url);
+	  sessionStorage.setItem("captcha_id", data.id);
+	  $("#captcha-image").attr("src", data.url);
 	}
 };
 
@@ -39,23 +39,23 @@ const getMe = async () => {
 
 $(document).ready(() => {
 	getCaptcha();
-});
-
-$("#btn-refresh-captcha").click(() => getCaptcha());
-
-$("form").submit(async (e) => {
+  });
+  
+  $("#btn-refresh-captcha").click(() => getCaptcha());
+  
+  $("form").submit(async (e) => {
 	e.preventDefault();
-
+  
 	const username = $("#username").val();
 	const password = $("#password").val();
 	const captcha = $("#captcha").val();
-
+  
 	const fd = new FormData();
 	fd.append("username", username);
 	fd.append("password", password);
 	fd.append("id_captcha", sessionStorage.getItem("captcha_id"));
 	fd.append("captcha", captcha);
-
+  
 	const req = await fetch(
 		"https://api-sipandu-beradat.000webhostapp.com/admin-instansi/login/", {
 			method: "POST",
@@ -63,11 +63,11 @@ $("form").submit(async (e) => {
 		}
 	);
 	const {
-		status_code,
-		data,
-		message
+	  status_code,
+	  data,
+	  message
 	} = await req.json();
-
+  
 	if (status_code === 200) {
 		localStorage.setItem("access_token", data.access_token);
 		localStorage.setItem("refresh_token", data.refresh_token);
@@ -84,11 +84,11 @@ $("form").submit(async (e) => {
 			}
 		})
 	} else if (status_code === 400) {
-		Swal.fire({
-			title: "Terjadi Kesalahan",
-			text: message,
-			icon: "error",
-			confirmButtonText: "Tutup"
-		})
+	  Swal.fire({
+		title: "Terjadi Kesalahan",
+		text: message,
+		icon: "error",
+		confirmButtonText: "Tutup"
+	  })
 	}
-});
+  });
