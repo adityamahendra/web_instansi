@@ -14,6 +14,29 @@ const getCaptcha = async () => {
 	}
 };
 
+const getMe = async () => {
+	const fd = new FormData();
+	fd.append("XAT", `Bearer ${localStorage.getItem("access_token")}`);
+
+	const req = await fetch("https://api-sipandu-beradat.000webhostapp.com/admin-instansi/me/", {
+		method: "POST",
+		body: fd
+	})
+	const {
+		status_code,
+		data
+	} = await req.json();
+
+	if (status_code === 200) {
+		localStorage.setItem("id_instansi", data.petugas.instansi_petugas.id)
+		localStorage.setItem("jenis_instansi", data.petugas.instansi_petugas.jenis_instansi.name)
+		localStorage.setItem("name", data.petugas.name)
+		localStorage.setItem("avatar", data.petugas.avatar)
+	} else {
+		getMe()
+	}
+}
+
 $(document).ready(() => {
 	getCaptcha();
 });
@@ -34,7 +57,7 @@ $("form").submit(async (e) => {
 	fd.append("captcha", captcha);
 
 	const req = await fetch(
-		"https://api-sipandu-beradat.000webhostapp.com/admin-desa-adat/login/", {
+		"https://api-sipandu-beradat.000webhostapp.com/admin-instansi/login/", {
 			method: "POST",
 			body: fd,
 		}
@@ -49,11 +72,12 @@ $("form").submit(async (e) => {
 		localStorage.setItem("access_token", data.access_token);
 		localStorage.setItem("refresh_token", data.refresh_token);
 
+		await getMe()
 		Swal.fire({
 			title: "Berhasil!",
 			text: message,
 			icon: "success",
-			confirmButtonText: '<i class="fas fa-tachometer-alt pr-2"></i>Dashboard',
+			confirmButtonText: '<i class="fas fa-tachometer-alt pr-2"></i>Dashboard'
 		}).then((result) => {
 			if (result.isConfirmed) {
 				window.location.href = "index.html"

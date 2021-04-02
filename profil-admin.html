@@ -122,9 +122,8 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="nama-admin"></span>
-                <img id="avatar-admin" class="img-profile rounded-circle"
-                  src="img/avatar-3.png">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small text-capitalize" id="nav-nama-admin"></span>
+                <img class="img-profile rounded-circle" id="nav-avatar-admin">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -151,7 +150,8 @@
               <div class="card shadow mb-4">
                 <div class="card-header">
                   <div class="col-12 d-flex justify-content-between align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Profil Admin Instansi <span id="nama-instansi"></span></h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Profil Admin Instansi <span id="nama-instansi"></span>
+                    </h6>
 
                   </div>
                 </div>
@@ -174,7 +174,7 @@
                         </h6>
                         <div class="d-flex mt-3">
                           <div class="badge badge-success mr-2">Admin</div>
-                        </div>    
+                        </div>
 
                         <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
                           <li class="nav-item">
@@ -303,88 +303,88 @@
 
   <!-- Modal Edit Petugas -->
   <div class="modal fade bd-example-modal-lg" id="model-edit-admin-petugas" tabindex="-1" role="dialog"
-  aria-labelledby="model-edit-admin-petugas" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Edit Data Krama Desa Adat</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="form-edit-admin-petugas">
-          <input type="hidden" id="edit-id">
-          <input type="hidden" id="edit-id-banjar">
+    aria-labelledby="model-edit-admin-petugas" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Data Krama Desa Adat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form-edit-admin-petugas">
+            <input type="hidden" id="edit-id">
+            <input type="hidden" id="edit-id-banjar">
 
-          <div class="form-row align-items-center">
-            <div class="form-group col-md-4 mb-0">
-              <div class="profile-img">
-                <img src="../assets/img/desa adat/user3.jpg" id="edit-avatar-img" class="gallery-modal" />
-                <div class="ganti-foto btn btn-edit-profil">
-                  <input type="file" name="file" />Ganti Foto</div>
+            <div class="form-row align-items-center">
+              <div class="form-group col-md-4 mb-0">
+                <div class="profile-img">
+                  <img src="../assets/img/desa adat/user3.jpg" id="edit-avatar-img" class="gallery-modal" />
+                  <div class="ganti-foto btn btn-edit-profil">
+                    <input type="file" name="file" />Ganti Foto</div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-8 mb-0">
+                <div class="form-group mb-3">
+                  <label class="text-secondary" for="edit-nama">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="edit-nama">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label class="text-secondary" for="edit-jenis-krama">Jenis Krama</label>
+                    <select class="form-control form-control-option custom-select" id="edit-jenis-krama">
+                      <option value="0">Krama Wid</option>
+                      <option value="1">Krama Tamiu</option>
+                      <option value="2">Tamiu</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label class="text-secondary" for="edit-nik">NIK</label>
+                    <input type="text" disabled class="form-control" id="edit-nik">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label class="text-secondary" for="edit-telp">No. Telp</label>
+                    <input type="text" class="form-control" id="edit-telp">
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label class="text-secondary" for="edit-jenis-kelamin">Jenis Kelamin</label>
+                    <select class="form-control form-control-option custom-select" id="edit-jenis-kelamin">
+                      <option value="1">Laki-laki</option>
+                      <option value="2">Perempuan</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="form-group col-md-8 mb-0">
-              <div class="form-group mb-3">
-                <label class="text-secondary" for="edit-nama">Nama Lengkap</label>
-                <input type="text" class="form-control" id="edit-nama">
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label class="text-secondary" for="edit-status-aktif">Status Aktif</label>
+                <select class="form-control form-control-option custom-select" id="edit-status-aktif">
+                  <option value="1">Aktif</option>
+                  <option value="0">Tidak Aktif</option>
+                </select>
               </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6 mb-3">
-                  <label class="text-secondary" for="edit-jenis-krama">Jenis Krama</label>
-                  <select class="form-control form-control-option custom-select" id="edit-jenis-krama">
-                    <option value="0">Krama Wid</option>
-                    <option value="1">Krama Tamiu</option>
-                    <option value="2">Tamiu</option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6 mb-3">
-                  <label class="text-secondary" for="edit-nik">NIK</label>
-                  <input type="text" disabled class="form-control" id="edit-nik">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6 mb-3">
-                  <label class="text-secondary" for="edit-telp">No. Telp</label>
-                  <input type="text" class="form-control" id="edit-telp">
-                </div>
-                <div class="form-group col-md-6 mb-3">
-                  <label class="text-secondary" for="edit-jenis-kelamin">Jenis Kelamin</label>
-                  <select class="form-control form-control-option custom-select" id="edit-jenis-kelamin">
-                    <option value="1">Laki-laki</option>
-                    <option value="2">Perempuan</option>
-                  </select>
-                </div>
+              <div class="form-group col-md-6 mb-3">
+                <label class="text-secondary" for="edit-tanggal-lahir">Tanggal Lahir</label>
+                <input type="date" class="form-control" disabled id="edit-tanggal-lahir">
               </div>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6 mb-3">
-              <label class="text-secondary" for="edit-status-aktif">Status Aktif</label>
-              <select class="form-control form-control-option custom-select" id="edit-status-aktif">
-                <option value="1">Aktif</option>
-                <option value="0">Tidak Aktif</option>
-              </select>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
-            <div class="form-group col-md-6 mb-3">
-              <label class="text-secondary" for="edit-tanggal-lahir">Tanggal Lahir</label>
-              <input type="date" class="form-control" disabled id="edit-tanggal-lahir">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-          </div>
-        </form>
+          </form>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- modal foto -->
   <div id="mymodal" class="mymodal">
@@ -428,8 +428,9 @@
   <script src="js/show-field.js"></script>
 
   <!-- front end js -->
-  <script src="js/Profil Admin/navbar-admin.js"></script>
+  <script src="js/Front End/Profil Admin/navbar-admin.js"></script>
   <script src="js/Profil Admin/profil-admin.js"></script>
+
 
 </body>
 

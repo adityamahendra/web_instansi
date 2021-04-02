@@ -565,12 +565,7 @@ pre code {
  margin-right:auto;
  margin-left:auto
 }
-.container-crud{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap: 10px;
-}
+
 .tambah-petugas{
   display: flex; 
   justify-content:space-between; 
