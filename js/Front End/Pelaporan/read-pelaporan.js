@@ -7,7 +7,10 @@ const readPelaporanDarurat = async () => {
   const req = await fetch(
     `https://api-sipandu-beradat.000webhostapp.com/pelaporan-darurat/?id_instansi=${idInstansi}`
   );
-  const { status_code, data } = await req.json();
+  const {
+    status_code,
+    data
+  } = await req.json();
 
   if (status_code === 200) {
     return data;
@@ -21,7 +24,10 @@ const readPelaporan = async () => {
   const req = await fetch(
     `https://api-sipandu-beradat.000webhostapp.com/pelaporan/?id_instansi=${idInstansi}`
   );
-  const { status_code, data } = await req.json();
+  const {
+    status_code,
+    data
+  } = await req.json();
 
   if (status_code === 200) {
     return data;

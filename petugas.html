@@ -165,7 +165,8 @@
               <h6 class="m-0 font-weight-bold text-primary">Data Petugas</h6>
               <div class="form-inline ml-auto">
                 <small class="text-secondary mr-3" for="edit-active-status">Status Aktif</small>
-                <select type="search" class="custom-select custom-select-sm table-filter-select" data-table="order-table">
+                <select type="search" class="custom-select custom-select-sm table-filter-select"
+                  data-table="order-table">
                   <option value="">Semua</option>
                   <option value="Aktif">Aktif</option>
                   <option value="Tidak Aktif">Tidak Aktif</option>
@@ -173,7 +174,17 @@
               </div>
               <div class="form-inline pl-4">
                 <small class="mr-3">Cari</small>
-                <input type="text" id="search-table" class="form-control form-control-sm table-filter-search" onkeyup="searchTable()">
+                <input type="text" id="search-table" class="form-control form-control-sm table-filter-search"
+                  onkeyup="searchTable()">
+              </div>
+              <div class="pl-4">
+                <button class="btn btn-primary btn-icon-split btn-sm" data-toggle="modal"
+                  data-target="#modal-tambah-petugas">
+                  <span class="icon text-white-50">
+                    <i class="fas fa-plus"></i>
+                  </span>
+                  <span class="text">Tambah Petugas</span>
+                </button>
               </div>
             </div>
             <div class="card-body">
@@ -183,6 +194,7 @@
                     <tr>
                       <th>No</th>
                       <th>Nama Lengkap</th>
+                      <th>Tanggal Lahir</th>
                       <th>Jenis Kelamin</th>
                       <th>No. Telp</th>
                       <th>NIK</th>
@@ -221,76 +233,75 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Modal Tambah Petugas -->
-  <div class="modal fade bd-example-modal-lg" id="modal-tambah-petugas" tabindex="-1" role="dialog"
-    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+  <!-- modal tambah petugas -->
+  <div class="modal fade bd-example-modal-lg modal-option-search" id="modal-tambah-petugas" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tambah Petugas</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Petugas</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label class="col-form-label-sm">Nama Lengkap</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Nama Lengkap">
+
+          <!-- form tambah -->
+          <form id="form-tambah-krama-desa">
+            <div class="form-group mb-3">
+              <label class="text-secondary" for="tambah-name">Nama Lengkap</label>
+              <input type="text" class="form-control" id="tambah-name" placeholder="Nama Lengkap">
             </div>
-            <div class="form-group">
-              <label class="col-form-label-sm">Nama Pengguna</label>
-              <input type="text" class="form-control form-control-lg" placeholder="Nama Pengguna">
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-6 mb-sm-0">
-                <label class="col-form-label-sm">Kata Sandi</label>
-                <input type="password" class="form-control form-control-lg" placeholder="Kata Sandi">
+
+            <div class="form-row">
+              <div class="form-group col-md-6 mb-3">
+                <label class="text-secondary" for="tambah-phone">No. Telp</label>
+                <input type="text" class="form-control" id="tambah-phone" placeholder="No. Telp">
               </div>
-              <div class="col-sm-6">
-                <label class="col-form-label-sm">Ulangi Kata Sandi</label>
-                <input type="password" class="form-control form-control-lg" placeholder="Ulangi Kata Sandi">
+              <div class="form-group col-md-6 mb-3">
+                <label class="text-secondary" for="tambah-username">Nama Pengguna</label>
+                <input type="text" class="form-control  form-control-option custom-select" id="tambah-username">
               </div>
             </div>
-            <div class="form-group">
-              <label class="col-form-label-sm">NIK</label>
-              <input type="number" class="form-control form-control-lg" placeholder="NIK">
-            </div>
-            <div class="form-group row" style="margin-top: 15px;">
-              <div class="col-sm-6">
-                <label for="jk" class="col-form-label-sm">Jenis Kelamin</label>
-                <select class="form-control form-control-lg" id="jk">
-                  <option selected disabled>Pilih Jenis Kelamin</option>
-                  <option>Laki-laki</option>
-                  <option>Perempuan</option>
+            <div class="form-row">
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="tambah-password">Kata Sandi</label>
+                <input type="password" class="form-control" id="tambah-password" placeholder="Kata Sandi">
+              </div>
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="tambah-birthday">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tambah-birthday" placeholder="Tanggal Lahir">
+              </div>
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="tambah-banjar">Banjar</label>
+                <select class="form-control form-control-option custom-select option-search" id="tambah-banjar"
+                  name="tambah-banjar">
                 </select>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="example-date-input">Tanggal Lahir</label>
-                <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
               </div>
             </div>
 
-            <div class="form-group row" style="margin-top: 15px;">
-              <div class="col-sm-6 mb-sm-0">
-                <label class="col-form-label-sm">No. Telp</label>
-                <input type="number" class="form-control form-control-lg" placeholder="No. Telp">
+            <div class="form-row">
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="inputEmail4">Unggah Foto</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="tambah-avatar">
+                  <label class="custom-file-label" for="tambah-avatar">Unggah Foto</label>
+                </div>
               </div>
-              <div class="col-sm-6">
-                <label for="status_aktif" class="col-form-label-sm">Status Akun</label>
-                <select class="form-control form-control-lg" id="status_aktif">
-                  <option selected disabled>Pilih Status Akun</option>
-                  <option>Aktif</option>
-                  <option>Tidak Aktif</option>
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="tambah-gender">Jenis Kelamin</label>
+                <select class="form-control form-control-option custom-select option-search" id="tambah-gender">
+                  <option value="l">Laki-laki</option>
+                  <option value="p">Perempuan</option>
                 </select>
               </div>
+              <div class="form-group col-md-4 mb-3">
+                <label class="text-secondary" for="tambah-nik">NIK</label>
+                <input type="text" class="form-control" id="tambah-nik" aria-describedby="emailHelp" placeholder="NIK">
+              </div>
             </div>
-            <div class="form-group">
-              <label class="col-form-label-sm" for="exampleFormControlFile1">Unggah Foto Petugas</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-secondary mr-2">Tutup</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
               <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
           </form>
@@ -298,7 +309,6 @@
       </div>
     </div>
   </div>
-
   <!-- Modal Edit Petugas -->
   <div class="modal fade bd-example-modal-lg" id="modal-edit-petugas" tabindex="-1" role="dialog"
     aria-labelledby="model-edit-petugas" aria-hidden="true">

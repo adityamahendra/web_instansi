@@ -1,20 +1,39 @@
-$("#form-tambah-banjar").submit(async (e) => {
+$("#form-tambah-petugas").submit(async (e) => {
   e.preventDefault();
   startLoading()
-  await tambahBanjar()
+  await tambahPetugas()
 });
 
-const tambahBanjar = async () => {
-  const id_desa = localStorage.getItem("id_desa")
+const tambahPetugas = async () => {
+  const id_instansi = localStorage.getItem("id_instansi");
   const name = $("#tambah-name").val();
+  const username = $("#tambah-username").val();
+  const password = $("#tambah-password").val();
+  const phone = $("#tambah-phone").val();
+  const date_of_birth = $("#tambah-birthday").val();
+  const nik = $("#tambah-nik").val();
+  const gender = $("#tambah-gender").val();
+  const avatar = $("#tambah-avatar").prop("files");
 
   const fd = new FormData();
-  fd.append("id_desa", id_desa);
+  fd.append("id_banjar", id_banjar);
   fd.append("name", name);
+  fd.append("username", username);
+  fd.append("password", password);
+  fd.append("phone", phone);
+  fd.append("date_of_birth", date_of_birth);
+  fd.append("nik", nik);
+  fd.append("gender", gender);
+  fd.append("category", category);
+
+  if (avatar.length > 0) {
+    fd.append("avatar", avatar[0]);
+  }
+
   fd.append("XAT", `Bearer ${localStorage.getItem("access_token")}`);
 
   const req = await fetch(
-    "https://api-sipandu-beradat.000webhostapp.com/banjar/create/", {
+    "https://api-sipandu-beradat.000webhostapp.com/masyarakat/create/", {
       method: "POST",
       body: fd,
     }
@@ -26,7 +45,7 @@ const tambahBanjar = async () => {
   } = await req.json();
 
   if (status_code === 200) {
-    await read_banjar()
+    await read_krama();
     stopLoading()
     Swal.fire({
       title: "Berhasil!",
@@ -43,6 +62,6 @@ const tambahBanjar = async () => {
       confirmButtonText: "Tutup"
     })
   } else if (status_code === 401) {
-    refreshToken(tambahBanjar)
+    refreshToken(tambahKrama)
   }
 };

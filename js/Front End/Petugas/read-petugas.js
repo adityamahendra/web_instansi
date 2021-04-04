@@ -17,6 +17,7 @@ const read_petugas = async () => {
 				 <tr>
 					 <td>${i + 1}</td>
            <td style="text-transform:capitalize;">${obj.name}</td>
+           <td>${obj.date_of_birth}</td>
            <td>${obj.gender}</td>
            <td>${obj.phone}</td>
            <td>${obj.nik}</td>
